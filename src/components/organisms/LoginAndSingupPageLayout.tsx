@@ -51,7 +51,7 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
 
         if (!isExistUser) {
           await AxiosInstance.post("api/signup/", formData);
-          alert(`成功！！`);
+          alert(`ユーザー登録が完了しました`);
           navigate("/login");
         }
       } catch (error) {

@@ -6,6 +6,7 @@ const apiUrl = isDevelopment
   : import.meta.env.VITE_APT_BASE_URL_DEPLOY;
 
 console.log(`MODE output : ${import.meta.env.MODE}`)
+console.log(`apiUrl output : ${import.meta.env.VITE_APT_BASE_URL_DEPLOY}`)
 
 const API_BASE_URL = apiUrl;
 const AxiosInstance = axios.create({
