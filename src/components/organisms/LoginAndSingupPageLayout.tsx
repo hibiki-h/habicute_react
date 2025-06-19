@@ -49,13 +49,15 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
 
         const isExistUser = await userExists(formData);
 
+        if (isExistUser) {
+          alert(`別のユーザー名またはメールアドレスでサイドご入力ください`);
+          return;
+        }
         if (!isExistUser) {
           await AxiosInstance.post("api/signup/", formData);
           alert(`ユーザー登録が完了しました`);
           navigate("/login");
-        } else {
-          alert(`すでに同じユーザー情報が登録されています`);
-        }
+        } 
         console.log(`axios instans url log : ${AxiosInstance}`)
       } catch (error) {
         console.log(`handleSubmit error log :${error}`);
