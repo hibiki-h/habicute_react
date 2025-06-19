@@ -50,7 +50,7 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
         const isExistUser = await userExists(formData);
 
         if (isExistUser) {
-          alert(`別のユーザー名またはメールアドレスでサイドご入力ください`);
+          alert(`すでに別ユーザーによって登録済みのため\n別のユーザー名またはメールアドレスで再度ご入力ください`);
           return;
         }
         if (!isExistUser) {
@@ -88,7 +88,7 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
           email: data.email,
         },
       });
-      return res;
+      return res.data;
     } catch (error) {
       console.log(`userExists methid error log :${error}`);
     }
