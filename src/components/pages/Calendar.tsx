@@ -239,7 +239,6 @@ const Calender = memo(() => {
   /*---------Fullcalendar eventsSet method---------*/
 
   const handleEventsSet = (eventsSetInfo: TodoListType[]) => {
-    console.log("activate handleEventsSet");
     if (!calendarRef.current) return; //calendarApi代入処理のnullチェックのため
     const calendarApi = calendarRef.current.getApi(); //カレンダーの情報取得や切り替えなどの操作を可能にするapiを取得
     const { currentStart, currentEnd } = calendarApi.view; //calendar表示上の開始日、終了日データをそれぞれ取得
