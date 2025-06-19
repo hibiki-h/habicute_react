@@ -75,9 +75,9 @@ const Home = memo(() => {
       try {
         setIsLoading(true);
         await AxiosInstance.post("api/contact/", form);
-        alert("Message submitted!!");
+        alert("メッセージが送信されました");
       } catch (error) {
-        alert("Message unsubmitted...");
+        alert("メッセージ送信失敗");
         console.log(`error : ${error}`);
       } finally {
         setIsLoading(false);
@@ -85,7 +85,7 @@ const Home = memo(() => {
         handleScroll();
       }
     } else {
-      alert("正しいemailアドレスで入力してください");
+      alert("正しいメールアドレスで入力してください");
     }
   };
 

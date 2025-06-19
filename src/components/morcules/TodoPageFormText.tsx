@@ -4,7 +4,7 @@ import { memo } from "react";
 type Props = {
   children?: string;
   exampletext: string;
-  formInputProps: string | undefined;
+  formInputProps?: string;
   InputName: string;
   onChangeInputForm: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 };

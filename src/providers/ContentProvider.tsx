@@ -101,7 +101,7 @@ export const TodoProvider: FC<ContextProviderChildrenProps> = memo(
       const isAllFilled = Object.values(newTodo).every((value) => value !== "");
 
       if (!isAllFilled) {
-        window.alert(`Please enter all content \n すべて入力してください`);
+        window.alert(`すべて入力してください`);
         return;
       }
 
@@ -112,7 +112,7 @@ export const TodoProvider: FC<ContextProviderChildrenProps> = memo(
         };
 
         updateTodoListsAndTaskLists(updatedFormInput);
-        window.alert(`Update todo list!! \n 更新完了`);
+        window.alert(`更新完了`);
         setTodoLists((prev) =>
           prev.map((todo) =>
             todo.id === updatedFormInput.id
@@ -127,7 +127,7 @@ export const TodoProvider: FC<ContextProviderChildrenProps> = memo(
         };
         createTodoListsAndinClendarTodoLists(newTodo);
         setTodoLists((prev) => [...prev, newTodo]);
-        window.alert(`Add todo list!! \n 追加完了`);
+        window.alert(`追加完了`);
       }
       setFormInput(emptyFormInput);
       handleScroll();

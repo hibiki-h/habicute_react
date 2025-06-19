@@ -53,9 +53,12 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
           await AxiosInstance.post("api/signup/", formData);
           alert(`ユーザー登録が完了しました`);
           navigate("/login");
+        } else {
+          alert(`すでに同じユーザー情報が登録されています`);
         }
+        console.log(`axios instans url log : ${AxiosInstance}`)
       } catch (error) {
-        console.log(`error log :${error}`);
+        console.log(`handleSubmit error log :${error}`);
         return;
       } finally {
         setIsLoading(false);
@@ -77,7 +80,7 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
 
   const userExists = async (data: UsersType) => {
     try {
-      const res = await AxiosInstance.get("api/users_exist/", {
+      const res = await AxiosInstance.get("api/user-exist/", {
         params: {
           username: data.username,
           email: data.email,
@@ -85,7 +88,7 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
       });
       return res;
     } catch (error) {
-      console.log(`userExists error log :${error}`);
+      console.log(`userExists methid error log :${error}`);
     }
   };
 
