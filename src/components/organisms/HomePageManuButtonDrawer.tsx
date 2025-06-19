@@ -29,14 +29,16 @@ const HomePageMenuButtonDrawer = (props: Props) => {
           display={{ base: "block", md: "none" }}
           aria-label="menu button"
           position={"absolute"}
-          right={"10px"}
-          top={"8vh"}
-          borderRadius={"lg"}
+          right={"0px"}
+          top={"clamp(50px,8vh,80px)"}
+          w={"10%"}
+          h={"4%"}
           _hover={{
             "& .child-box": {
               transform: "translateX(-1vw)",
             },
           }}
+          zIndex={1}
         >
           <Flex direction={"column"} align={"center"} justify={"center"}>
             <Text
