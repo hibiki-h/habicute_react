@@ -50,15 +50,17 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
         const isExistUser = await userExists(formData);
 
         if (isExistUser) {
-          alert(`すでに別ユーザーによって登録済みのため\n別のユーザー名またはメールアドレスで再度ご入力ください`);
+          alert(
+            `すでに別ユーザーによって登録済みのため\n別のユーザー名またはメールアドレスで再度ご入力ください`
+          );
           return;
         }
         if (!isExistUser) {
           await AxiosInstance.post("api/signup/", formData);
           alert(`ユーザー登録が完了しました`);
           navigate("/login");
-        } 
-        console.log(`axios instans url log : ${AxiosInstance}`)
+        }
+        console.log(`axios instans url log : ${AxiosInstance}`);
       } catch (error) {
         console.log(`handleSubmit error log :${error}`);
         return;
@@ -70,7 +72,7 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
         const isSuccess = await login(formData.username, formData.password);
         isSuccess
           ? navigate("/home")
-          : alert("ユーザー名、パスワードが正しくありません");
+          : alert("ユーザーが存在しないか、パスワードが正しくありません");
       } catch (error) {
         alert(`ユーザーが見つかりません、登録したユーザーで入力してください`);
         console.log("Login Failed");
