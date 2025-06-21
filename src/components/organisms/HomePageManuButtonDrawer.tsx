@@ -14,6 +14,12 @@ type Props = {
   setOpen: (open: boolean) => void;
 };
 
+const navItems = [
+  { toLink: "/home", children: "HOME" },
+  { toLink: "/calendar", children: "CALENDER" },
+  { toLink: "/todo", children: "TODO" },
+];
+
 const HomePageMenuButtonDrawer = (props: Props) => {
   const { open, setOpen } = props;
 
@@ -29,7 +35,7 @@ const HomePageMenuButtonDrawer = (props: Props) => {
           display={{ base: "block", md: "none" }}
           aria-label="menu button"
           position={"absolute"}
-          right={"0px"}
+          right={"5px"}
           top={"clamp(50px,8vh,80px)"}
           w={"10%"}
           h={"4%"}
@@ -75,14 +81,15 @@ const HomePageMenuButtonDrawer = (props: Props) => {
                   mt={"clamp(30px, 3vw, 100px)"}
                   gap={"clamp(50px, 4vw, 200px)"}
                 >
-                  <HeaderAndNavDialog toLink={"/home"} children={"HOME"} />
-
-                  <HeaderAndNavDialog
-                    toLink={"/calendar"}
-                    children={"CALENDER"}
-                  />
-
-                  <HeaderAndNavDialog toLink={"/todo"} children={"TODO"} />
+                  
+                  {navItems.map((item) => (
+                    <HeaderAndNavDialog
+                      key={item.toLink}
+                      toLink={item.toLink}
+                      children={item.children}
+                      setOpen={setOpen}
+                    />
+                  ))}
 
                   <Drawer.CloseTrigger asChild>
                     <Button

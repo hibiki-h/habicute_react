@@ -1,5 +1,6 @@
 import { Box, Button, Image, Text } from "@chakra-ui/react";
 import { memo } from "react";
+import { Link } from "react-router";
 
 type Props = {
   children: string;
@@ -32,7 +33,7 @@ const NavItem = memo((props: Props) => {
             },
           }}
         >
-          <a href={toLink} style={{ padding: 0 }}>
+          <Link to={toLink} style={{ padding: 0 }}>
             <Box
               className="child-box-left"
               style={{ transition: "transform 0.3s" }}
@@ -58,7 +59,7 @@ const NavItem = memo((props: Props) => {
             >
               <Image src="/divider-nav_decoration_right.svg" />
             </Box>
-          </a>
+          </Link>
         </Button>
       </li>
     </>

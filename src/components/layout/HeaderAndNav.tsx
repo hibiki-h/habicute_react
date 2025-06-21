@@ -2,12 +2,12 @@ import { Box, Flex, Image } from "@chakra-ui/react";
 import { Outlet } from "react-router";
 
 import NavItem from "../atoms/NavItem";
-import { useState } from "react";
+import { memo, useState } from "react";
 import UsernameAndLogoutButton from "../morcules/UsernameAndLogoutButton";
 import HomePageMenuButtonDrawer from "../organisms/HomePageManuButtonDrawer";
 import { useTodo } from "@/providers/ContentProvider";
 
-const HeaderAndNav = () => {
+const HeaderAndNav = memo(() => {
   const [open, setOpen] = useState(false);
 
   const { scrollRef, containerRef } = useTodo();
@@ -63,8 +63,9 @@ const HeaderAndNav = () => {
         <UsernameAndLogoutButton />
 
         <Outlet />
+        
       </Flex>
     </>
   );
-};
+});
 export default HeaderAndNav;

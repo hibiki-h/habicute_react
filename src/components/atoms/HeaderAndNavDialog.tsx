@@ -1,18 +1,24 @@
 import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import { memo } from "react";
+import { Link } from "react-router";
 
 type Props = {
   toLink: string;
   children: string;
+  setOpen: (open: boolean) => void;
 };
 
 const HeaderAndNavDialog = memo((props: Props) => {
-  const { toLink, children } = props;
+  const { toLink, children, setOpen } = props;
 
   return (
     <>
-      <Button asChild>
-        <a href={toLink}>
+      <Button
+        onClick={() => {
+          setOpen(false);
+        }}
+      >
+        <Link to={toLink}>
           <Flex
             direction={"row"}
             align={"center"}
@@ -53,7 +59,7 @@ const HeaderAndNavDialog = memo((props: Props) => {
               <Image src="/divider-nav_decoration_right.svg" />
             </Box>
           </Flex>
-        </a>
+        </Link>
       </Button>
     </>
   );
