@@ -38,7 +38,7 @@ const HomePageContactForm = memo((props: Props) => {
             <Fieldset.Root>
               <Field.Root>
                 <Input
-                  height={"clamp(23px,1.5vw,50px)"}
+                  height={"clamp(23px,2vw,40px)"}
                   mb={"clamp(5px, 1vw, 10px)"}
                   name={formprop}
                   type={formprop}
@@ -46,7 +46,7 @@ const HomePageContactForm = memo((props: Props) => {
                   onChange={(e) =>
                     setForm({ ...form, [formprop]: e.target.value })
                   }
-                  fontSize={"clamp(12px, 1.5vw, 35px)"}
+                  fontSize={"clamp(12px, 1.5vw, 30px)"}
                 />
               </Field.Root>
             </Fieldset.Root>
