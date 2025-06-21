@@ -133,7 +133,7 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
           <Flex align={"center"} direction={"column"}>
             <Input
               w={"clamp(130px, 20vw, 500px)"}
-              height={"clamp(14px, 2vw, 35px)"}
+              height={"clamp(14px, 2vw, 40px)"}
               fontSize={"clamp(11px, 1.5vw, 30px)"}
               textAlign={"center"}
               placeholder="username"
