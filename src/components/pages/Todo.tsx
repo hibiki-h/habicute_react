@@ -121,7 +121,7 @@ const Todo = memo(() => {
 
             <TodoPageFormText
               children="then"
-              exampletext={`例）そうならないよう、給料日になったら\n投資分のお金が口座から抜かれるような仕組みを\n事前に設定しておく`}
+              exampletext={`例）そうならないよう、給料日に\n投資分のお金が口座から抜かれるよう\n事前自動引き落としを設定しておく`}
               formInputProps={formInput.obstacle_then}
               InputName={"obstacle_then"}
               onChangeInputForm={onChangeInputForm}
