@@ -68,7 +68,7 @@ const PasswordReset = memo(() => {
           </Flex>
 
           <Box position={"relative"} bottom={"clamp(10px, 1.5vw, 20px)"}>
-            <Text fontSize={"clamp(15px, 2vw, 50px)"}>Password reset form</Text>
+            <Text fontSize={"clamp(15px, 2vw, 50px)"}>パスワードリセット</Text>
           </Box>
 
           <form onSubmit={handleSubmit(submission)}>
@@ -87,7 +87,7 @@ const PasswordReset = memo(() => {
                   >
                     <input
                       type="password"
-                      placeholder="password"
+                      placeholder="メールアドレス"
                       autoComplete="off"
                       {...register("password", {
                         required: "password required",
@@ -114,7 +114,7 @@ const PasswordReset = memo(() => {
 
               <LoginSignupPasswordresetPageButton
                 isLoading={isLoading}
-                children="send mail"
+                children="メール送信"
               />
             </Stack>
           </form>

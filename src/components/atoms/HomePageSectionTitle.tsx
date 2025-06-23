@@ -12,7 +12,7 @@ const HomePageSectionTitle = memo((props: Props) => {
   return (
     <>
       <Box mb={"clamp(25px, 4vw, 400px)"}>
-        <Text fontSize={"clamp(18px, 3vw, 50px)"}> {sectionTitle}</Text>
+        <Text fontSize={"clamp(16px, 3vw, 50px)"}> {sectionTitle}</Text>
       </Box>
       {sectionComment && (
         <Box

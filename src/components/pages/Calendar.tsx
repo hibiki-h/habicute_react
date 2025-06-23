@@ -15,6 +15,7 @@ import interactionPlugin, {
   DateClickArg,
   EventResizeDoneArg,
 } from "@fullcalendar/interaction"; // ユーザー操作対応 // 週間・日間カレンダー
+import jaLocale from "@fullcalendar/core/locales/ja";
 import { EventImpl } from "@fullcalendar/core/internal";
 import { v4 as uuidv4 } from "uuid";
 
@@ -143,11 +144,11 @@ const Calender = memo(() => {
 
   const getEventColorByStatus = (status: string): string => {
     switch (status) {
-      case "Done":
+      case "完了":
         return "#c11336";
-      case "Failed":
+      case "未完了":
         return "#0000cd";
-      case "Planned":
+      case "予定":
         return "#696969";
       default:
         return "";
@@ -265,17 +266,17 @@ const Calender = memo(() => {
     const allEventsLength = events.length;
 
     const doneCount = events.filter(
-      (event) => event.extendedProps?.status === "Done"
+      (event) => event.extendedProps?.status === "完了"
     ).length;
     setDoneEventsCount(doneCount);
 
     const plannedCount = events.filter(
-      (event) => event.extendedProps?.status === "Planned"
+      (event) => event.extendedProps?.status === "予定"
     ).length;
     setPlannedEventsCount(plannedCount);
 
     const failedCount = events.filter(
-      (event) => event.extendedProps?.status === "Failed"
+      (event) => event.extendedProps?.status === "未完了"
     ).length;
     setFailedStatusEventsCount(failedCount);
 
@@ -313,7 +314,7 @@ const Calender = memo(() => {
 
           <Box flex="0 1 auto" px="5%">
             <Text textAlign="center" fontSize="clamp(14px, 2vw, 50px)">
-              Achievement rate
+              目標達成率
             </Text>
           </Box>
 
@@ -349,7 +350,7 @@ const Calender = memo(() => {
             >
               <Box>
                 <Text fontSize={"clamp(12px, 1.5vw, 40px)"}>
-                  {currentView === "timeGridWeek" ? "Week" : "Month"}
+                  {currentView === "timeGridWeek" ? "1週間" : "1ヶ月間"}
                 </Text>
               </Box>
               <Box
@@ -358,9 +359,9 @@ const Calender = memo(() => {
                 fontSize={"clamp(11px, 1.5vw, 35px)"}
               >
                 <Text>{`${doneStatusEventsAchievementRate}%
-              (Done: ${doneEventsCount} 
-              Failed: ${failedStatusEventsCount} 
-              Planned: ${plannedEventsCount})`}</Text>
+              (完了: ${doneEventsCount} 
+              未完了: ${failedStatusEventsCount} 
+              予定: ${plannedEventsCount})`}</Text>
               </Box>
             </Flex>
           </Box>
@@ -376,6 +377,7 @@ const Calender = memo(() => {
 
         <Box m={"clamp(50px, 10vw, 150px)"} maxWidth={"85vw"}>
           <FullCalendar
+            locale={jaLocale}
             ref={calendarRef}
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
             initialView="dayGridMonth"

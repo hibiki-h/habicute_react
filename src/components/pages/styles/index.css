@@ -26,7 +26,7 @@
   position: relative;
   border: none;
   border-radius: unset;
-  font-size: clamp(14px, 2vw, 40px);
+  font-size: clamp(12px, 2vw, 35px);
   color: #000;
   background-color: transparent;
   transition: color 0.3s ease;
@@ -72,11 +72,16 @@
 }
 
 .fc .fc-toolbar-title {
-  font-size: clamp(15px, 2.8vw, 50px);
+  font-size: clamp(14px, 2.8vw, 45px);
   font-weight: bold;
   margin: 0 5px;
   white-space: nowrap;
   text-align: center;
+}
+
+.fc .fc-scrollgrid-sync-inner {
+  overflow: visible;
+  white-space: wrap;
 }
 
 @media (max-width: 470px) {
@@ -90,7 +95,7 @@
 }
 
 .fc .fc-col-header-cell-cushion {
-  font-size: clamp(10px, 1.5vw, 35px);
+  font-size: clamp(8px, 1.5vw, 35px);
 }
 
 .fc .fc-daygrid-day-number {
@@ -138,6 +143,7 @@
 
 .fc-direction-ltr .fc-timegrid-slot-label-frame {
   text-align: center;
+  font-size: clamp(10px, 2.5vw, 30px);
 }
 
 .fc-v-event .fc-event-main-frame {

@@ -40,7 +40,7 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
   const handleSubmit = async (e: FormEvent<HTMLInputElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    if (pageTitle === "Signup") {
+    if (pageTitle === "アカウント登録") {
       try {
         const isPasswordValid = handlePasswordError(formData);
         const isEmailValid = handleEmailError(formData);
@@ -67,7 +67,7 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
       } finally {
         setIsLoading(false);
       }
-    } else if (pageTitle === "Login") {
+    } else if (pageTitle === "ログイン") {
       try {
         const isSuccess = await login(formData.username, formData.password);
         isSuccess
@@ -138,7 +138,7 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
               height={"clamp(14px, 2vw, 40px)"}
               fontSize={"clamp(11px, 1.5vw, 30px)"}
               textAlign={"center"}
-              placeholder="username"
+              placeholder="ユーザー名"
               name="username"
               value={formData.username}
               onChange={handleChange}
@@ -157,7 +157,7 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
               height={"clamp(14px, 2vw, 35px)"}
               fontSize={"clamp(11px, 1.5vw, 30px)"}
               textAlign={"center"}
-              placeholder="password"
+              placeholder="パスワード"
               name="password"
               type="password"
               value={formData.password}
@@ -172,14 +172,14 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
             />
           </Flex>
 
-          {pageTitle === "Signup" && (
+          {pageTitle === "アカウント登録" && (
             <Flex align={"center"} direction={"column"}>
               <Input
                 w={"clamp(130px, 20vw, 500px)"}
                 height={"clamp(14px, 2vw, 35px)"}
                 fontSize={"clamp(11px, 1.5vw, 30px)"}
                 textAlign={"center"}
-                placeholder="email"
+                placeholder="メールアドレス"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
@@ -195,7 +195,7 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
 
           <LoginSignupPasswordresetPageButton
             isLoading={isLoading}
-            children={"submit"}
+            children={"実行"}
           />
         </Stack>
 
@@ -220,7 +220,7 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
           >
             <Link to="/password-reset-request-form">
               <Text fontSize={"clamp(11px, 1.2vw, 30px)"}>
-                forgot password?
+                パスワードリセット
               </Text>
             </Link>
           </Button>

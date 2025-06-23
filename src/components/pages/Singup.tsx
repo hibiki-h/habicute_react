@@ -5,9 +5,9 @@ const Signup = memo(() => {
   return (
     <>
       <LoginAndSingupPageLayout
-        pageTitle="Signup"
+        pageTitle="アカウント登録"
         toLink="/login"
-        toLinkTitle="Login page"
+        toLinkTitle="ログイン"
       />
     </>
   );

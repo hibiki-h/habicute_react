@@ -32,7 +32,7 @@ const TodoPageFormClearButton = memo(() => {
             transition={".3s"}
             className="text"
           >
-            clearform
+            クリア
           </Text>
           <Box
             w={"clamp(75px, 10vw, 180px)"}

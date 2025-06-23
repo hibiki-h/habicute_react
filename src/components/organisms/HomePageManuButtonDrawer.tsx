@@ -52,7 +52,7 @@ const HomePageMenuButtonDrawer = (props: Props) => {
               position={"relative"}
               left={"1"}
             >
-              menu
+              メニュー
             </Text>
             <Box
               w={"clamp(40px, 11vw, 0px)"}
@@ -114,13 +114,13 @@ const HomePageMenuButtonDrawer = (props: Props) => {
                           left={"5px"}
                           bottom={"clamp(4px, 1vw, 8px)"}
                         >
-                          back
+                          戻る
                         </Text>
 
                         <Box
                           w={"clamp(60px, 4vw, 140px)"}
                           position={"relative"}
-                          bottom={"clamp(4px, 1vw, 7px)"}
+                          bottom={"8px"}
                           className="child-box"
                           transition={".3s"}
                         >

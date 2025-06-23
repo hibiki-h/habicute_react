@@ -71,7 +71,7 @@ const CalendarPageDrawerDateClickChangeStatus = memo(
               onClickSetStatus={onClickSetStatus}
               setOpenEventClick={setOpenEventClick}
               setOpenDateClickTaskStatus={setOpenDateClickTaskStatus}
-              statusText={"Planned"}
+              statusText={"予定"}
             />
 
             <ChangeStatusButton
@@ -80,7 +80,7 @@ const CalendarPageDrawerDateClickChangeStatus = memo(
               onClickSetStatus={onClickSetStatus}
               setOpenEventClick={setOpenEventClick}
               setOpenDateClickTaskStatus={setOpenDateClickTaskStatus}
-              statusText={"Failed"}
+              statusText={"未完了"}
             />
 
             <ChangeStatusButton
@@ -89,7 +89,7 @@ const CalendarPageDrawerDateClickChangeStatus = memo(
               onClickSetStatus={onClickSetStatus}
               setOpenEventClick={setOpenEventClick}
               setOpenDateClickTaskStatus={setOpenDateClickTaskStatus}
-              statusText={"Done"}
+              statusText={"完了"}
             />
           </Flex>
 
@@ -104,7 +104,7 @@ const CalendarPageDrawerDateClickChangeStatus = memo(
                   newTaskInfo && IncalendarDeleteTodoLists(newTaskInfo.id);
               }}
             >
-              <Text fontSize={"clamp(14px, 1.5vw, 30px)"}>Delete task</Text>
+              <Text fontSize={"clamp(14px, 1.5vw, 30px)"}>タスク削除</Text>
             </Button>
           </Box>
 

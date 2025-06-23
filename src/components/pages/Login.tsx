@@ -5,9 +5,9 @@ const Login:FC = memo(() => {
   return (
     <>
       <LoginAndSingupPageLayout
-        pageTitle="Login"
+        pageTitle="ログイン"
         toLink="/signup"
-        toLinkTitle="Signup page"
+        toLinkTitle="アカウント登録"
       />
     </>
   );

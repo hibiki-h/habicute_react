@@ -2,7 +2,7 @@ import { Dispatch, ReactNode, RefObject, SetStateAction } from "react";
 
 //ContentProvider
 
-export type Status = "Done" | "Failed" | "Planned";
+export type Status = "完了" | "未完了" | "予定";
 
 export type ContactFormType = {
   name: string;

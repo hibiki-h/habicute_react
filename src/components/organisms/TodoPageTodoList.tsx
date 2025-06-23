@@ -45,7 +45,7 @@ const TodoPageTodoList = memo(() => {
           alignItems={"center"}
           top={"clamp(20px,3vw,60px)"}
         >
-          <Text fontSize={"clamp(12px, 1.3vw, 35px)"}>TODO LIST</Text>
+          <Text fontSize={"clamp(12px, 1.3vw, 35px)"}>タスク一覧</Text>
         </Box>
         <Flex justify={"space-between"} w={"100%"}>
           <Box w={{ base: "30%", xl: "35%" }}>
@@ -94,21 +94,6 @@ const TodoPageTodoList = memo(() => {
                     h={"clamp(40px, 5vw, 80px)"}
                   >
                     <Menu.Item
-                      value={"Delete"}
-                      color={"gray.500"}
-                      flex={1}
-                      display={"flex"}
-                      justifyContent={"center"}
-                      fontSize={"clamp(12px, 1vw, 24px)"}
-                      _hover={{
-                        color: "red.600",
-                        backgroundColor: "transparent",
-                      }}
-                      onClick={() => onClickDeleteTodoList(children.id)}
-                    >
-                      <Text>Delete</Text>
-                    </Menu.Item>
-                    <Menu.Item
                       value={"Edit"}
                       color={"gray.500"}
                       fontSize={"clamp(12px, 1vw, 24px)"}
@@ -121,7 +106,22 @@ const TodoPageTodoList = memo(() => {
                       }}
                       onClick={() => onClickEditFormInput(children.id)}
                     >
-                      <Text>Edit</Text>
+                      <Text>編集</Text>
+                    </Menu.Item>
+                    <Menu.Item
+                      value={"Delete"}
+                      color={"gray.500"}
+                      flex={1}
+                      display={"flex"}
+                      justifyContent={"center"}
+                      fontSize={"clamp(12px, 1vw, 24px)"}
+                      _hover={{
+                        color: "red.600",
+                        backgroundColor: "transparent",
+                      }}
+                      onClick={() => onClickDeleteTodoList(children.id)}
+                    >
+                      <Text>削除</Text>
                     </Menu.Item>
                   </Flex>
                 </Menu.Content>

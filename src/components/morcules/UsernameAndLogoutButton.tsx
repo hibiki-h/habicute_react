@@ -21,7 +21,7 @@ const UsernameAndLogoutButton = memo(() => {
           color={"gray.600"}
           fontSize={"clamp(11px, 1.3vw, 30px)"}
         >
-          <span style={{ fontWeight: "bold" }}>USER</span>: {user?.username}
+          <span style={{ fontWeight: "bold" }}>ユーザー</span>: {user?.username}
         </Text>
         <Button
           onClick={() => logout()}
@@ -49,7 +49,7 @@ const UsernameAndLogoutButton = memo(() => {
             transition={".5s"}
             fontSize={"clamp(11px, 1.3vw, 30px)"}
           >
-            Logout
+            ログアウト
           </Text>
           <Image
             className="child-box-right"

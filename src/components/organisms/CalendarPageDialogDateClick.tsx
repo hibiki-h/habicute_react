@@ -82,7 +82,7 @@ const CalendarPageDialogDateClick = memo((props: Props) => {
                       top={"clamp(20px,2vw,50px)"}
                     >
                       <Text fontSize={"clamp(16px, 1.3vw, 35px)"}>
-                        TODO LIST
+                        タスク一覧
                       </Text>
                     </Flex>
                     <Flex justify={"space-between"} w={"95%"}>
@@ -139,7 +139,7 @@ const CalendarPageDialogDateClick = memo((props: Props) => {
                                     direction={{ base: "column", md: "row" }}
                                   >
                                     {(
-                                      ["Planned", "Failed", "Done"] as Status[]
+                                      ["予定", "未完了", "完了"] as Status[]
                                     ).map((status) => (
                                       <MenuItem
                                         key={status}
@@ -174,10 +174,6 @@ const CalendarPageDialogDateClick = memo((props: Props) => {
                         下のボタンをクリックして
                         <br />
                         Todoページで作成してください。
-                        <br />
-                        no todotasks were found, Click the button below
-                        <br />
-                        to view the Todo page and create one.
                       </Text>
                     )}
 
@@ -197,7 +193,7 @@ const CalendarPageDialogDateClick = memo((props: Props) => {
                   >
                     <Box _hover={{ color: "red.600" }} transition=".2s">
                       <Text fontSize={"clamp(16px, 1.3vw, 35px)"}>
-                        <Link to={"/todo"}>Edit / Create</Link>
+                        <Link to={"/todo"}>編集 / 作成</Link>
                       </Text>
                     </Box>
                   </Flex>

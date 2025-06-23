@@ -134,7 +134,7 @@ const Todo = memo(() => {
             position={"relative"}
             left={"20vw"}
           >
-            <TodoPageButton children="ENTER" />
+            <TodoPageButton children="追加" />
           </Flex>
         </Flex>
       </Box>

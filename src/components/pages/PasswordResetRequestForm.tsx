@@ -92,7 +92,7 @@ const PasswordResetRequestForm = memo(() => {
           </Flex>
 
           <Box position={"relative"} bottom={"clamp(10px, 1.5vw, 30px)"}>
-            <Text fontSize={"clamp(15px, 2vw, 50px)"}>Password reset form</Text>
+            <Text fontSize={"clamp(15px, 2vw, 50px)"}>パスワードリセットフォーム</Text>
           </Box>
 
           <Stack
@@ -109,7 +109,7 @@ const PasswordResetRequestForm = memo(() => {
                 height={"clamp(14px, 2vw, 35px)"}
                 fontSize={"clamp(11px, 1.5vw, 30px)"}
                 textAlign={"center"}
-                placeholder="email"
+                placeholder="メールアドレス"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
@@ -124,7 +124,7 @@ const PasswordResetRequestForm = memo(() => {
 
             <LoginSignupPasswordresetPageButton
               isLoading={isLoading}
-              children="send mail"
+              children="メール送信"
             />
           </Stack>
 
@@ -137,7 +137,7 @@ const PasswordResetRequestForm = memo(() => {
               transition={".5s"}
               onClick={() => navigate("/signup")}
             >
-              <Text fontSize={"clamp(11px, 1.2vw, 30px)"}>Signup page</Text>
+              <Text fontSize={"clamp(11px, 1.2vw, 30px)"}>アカウント登録</Text>
             </Button>
 
             <Button
@@ -149,7 +149,7 @@ const PasswordResetRequestForm = memo(() => {
               h={"auto"}
               onClick={() => navigate("/login")}
             >
-              <Text fontSize={"clamp(11px, 1.2vw, 30px)"}>Login page</Text>
+              <Text fontSize={"clamp(11px, 1.2vw, 30px)"}>ログイン</Text>
             </Button>
           </HStack>
 
