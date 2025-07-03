@@ -70,9 +70,12 @@ const LoginAndSingupPageLayout = memo((props: Props) => {
     } else if (pageTitle === "ログイン") {
       try {
         const isSuccess = await login(formData.username, formData.password);
-        isSuccess
-          ? navigate("/home")
-          : alert("ユーザーが存在しないか、パスワードが正しくありません");
+        if (isSuccess) {
+          navigate("/home");
+          window.location.reload(); //ログイン後のページ遷移をスムーズにするため
+        } else {
+          alert("ユーザーが存在しないか、パスワードが正しくありません");
+        }
       } catch (error) {
         alert(`ユーザーが見つかりません、登録したユーザーで入力してください`);
         console.log("Login Failed");
